@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Chandramohan K">
+<meta property="og:description" content="Applied Research Engineer at zeb. Research, experience, projects and writing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E8590C'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ECK%3C/text%3E%3C/svg%3E">
+<style>
+/* Base reset */
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>Chandramohan K</title>
+<meta name="description" content="Chandramohan K: Applied Research Engineer at zeb. Research, experience, projects and writing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@500;600&family=VT323&display=swap">
+<style>
+/* Layout: one 800px column under a floating glass dock, small dense type, rows with soft hover plates. A halftone "CK" mark opens the page, Walter lives along the bottom edge of the screen, and a marigold accent runs through the details. */
+:root {
+  --bg: #FAFAFA;
+  --surface: #FFFFFF;
+  --ink: #0E0E0E;
+  --body: #3B3B3B;
+  --meta: #767676;
+  --rule: rgba(0, 0, 0, 0.08);
+  --hover: rgba(0, 0, 0, 0.045);
+  --glass: rgba(250, 250, 250, 0.74);
+  --accent: #E8590C;
+  --accent-soft: rgba(232, 89, 12, 0.12);
+  --shadow: rgba(0, 0, 0, 0.08);
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-pixel: "VT323", ui-monospace, Menlo, Consolas, monospace;
+  --font-tamil: "Noto Sans Tamil", "Nirmala UI", "Latha", sans-serif;
+  --size-body: 0.875rem;
+  --size-mini: 0.75rem;
+  --size-heading: clamp(1.25rem, 5.5vw, 1.875rem);
+  --pad: 2rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E0E0E; --surface: #161616; --ink: #F2F2F2; --body: #CFCFCF; --meta: #8E8E8E;
+    --rule: rgba(255, 255, 255, 0.1); --hover: rgba(255, 255, 255, 0.06); --glass: rgba(18, 18, 18, 0.72);
+    --accent: #FF7A33; --accent-soft: rgba(255, 122, 51, 0.16); --shadow: rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E0E0E; --surface: #161616; --ink: #F2F2F2; --body: #CFCFCF; --meta: #8E8E8E;
+  --rule: rgba(255, 255, 255, 0.1); --hover: rgba(255, 255, 255, 0.06); --glass: rgba(18, 18, 18, 0.72);
+  --accent: #FF7A33; --accent-soft: rgba(255, 122, 51, 0.16); --shadow: rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+@media (max-width: 600px) { :root { --pad: 1.25rem; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--size-body); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 0.22em; text-decoration-thickness: 1.5px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; margin: 0; color: var(--body); }
+kbd {
+  font-family: var(--font-body); font-size: 0.66rem; font-weight: 500; line-height: 1; color: var(--meta);
+  padding: 0.15rem 0.3rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface);
+}
+.meta { color: var(--meta); font-size: var(--size-mini); }
+
+/* Floating dock */
+.dock-wrap {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 0.6rem); z-index: 50;
+  display: flex; justify-content: center; margin-top: 0.6rem; pointer-events: none;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.dock-inner { position: relative; pointer-events: auto; max-width: 100%; }
+.dock {
+  display: flex; align-items: center; gap: 0.15rem; padding: 0.25rem; border-radius: 0.75rem; max-width: 100%;
+  background: var(--glass); border: 1px solid var(--rule); box-shadow: 0 6px 24px var(--shadow);
+  -webkit-backdrop-filter: blur(14px) saturate(1.5); backdrop-filter: blur(14px) saturate(1.5);
+}
+.dock-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem; height: 1.95rem; padding: 0 0.6rem; border-radius: 0.45rem;
+  border: 0; background: transparent; color: var(--ink); font: 500 var(--size-body) / 1 var(--font-body);
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+}
+.dock-btn:hover { background: var(--hover); color: var(--ink); }
+.dock-sep { width: 1px; height: 1.1rem; background: var(--rule); margin-inline: 0.2rem; }
+@media (max-width: 700px) { .dock .navlink { display: none; } .dock-sep.nav-sep { display: none; } }
+@media (hover: none) { .dock kbd { display: none; } }
+.eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
+.eq i { display: block; width: 2.5px; height: 4px; border-radius: 1px; background: var(--accent); }
+.radio[aria-pressed="true"] .eq i { animation: eq 0.9s ease-in-out infinite; }
+.radio[aria-pressed="true"] .eq i:nth-child(2) { animation-delay: 0.2s; }
+.radio[aria-pressed="true"] .eq i:nth-child(3) { animation-delay: 0.4s; }
+@keyframes eq { 0%, 100% { height: 3px; } 50% { height: 12px; } }
+.menu {
+  position: absolute; top: calc(100% + 0.5rem); right: 0; width: min(21rem, calc(100vw - 32px));
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 1rem; box-shadow: 0 14px 40px var(--shadow);
+  padding: 0.6rem; display: grid; gap: 0.15rem;
+}
+.menu-nav { display: none; }
+@media (max-width: 700px) { .menu-nav { display: grid; gap: 0.1rem; padding-bottom: 0.4rem; margin-bottom: 0.3rem; border-bottom: 1px solid var(--rule); } }
+.menu-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; width: 100%;
+  padding: 0.5rem 0.6rem; border-radius: 0.55rem; border: 0; background: transparent; color: var(--ink);
+  font: 500 var(--size-body) / 1.3 var(--font-body); text-align: left; text-decoration: none; cursor: pointer;
+}
+.menu-row:hover { background: var(--hover); color: var(--ink); }
+.state { font-size: var(--size-mini); color: var(--meta); }
+.menu-row[aria-checked="true"] .state { color: var(--accent); }
+.menu-label { padding: 0.55rem 0.6rem 0.2rem; font-size: var(--size-mini); color: var(--meta); }
+.seg { display: flex; gap: 0.3rem; padding: 0.2rem 0.6rem 0.4rem; }
+.seg button {
+  flex: 1; padding: 0.4rem 0.5rem; border-radius: 0.5rem; border: 1px solid var(--rule); background: var(--bg);
+  color: var(--ink); font: 500 var(--size-mini) / 1.2 var(--font-body); cursor: pointer;
+}
+.seg button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.vol { display: flex; align-items: center; gap: 0.6rem; padding: 0.2rem 0.6rem 0.5rem; font-size: var(--size-mini); color: var(--meta); }
+.vol input { flex: 1; accent-color: var(--accent); }
+.menu-note { padding: 0.35rem 0.6rem 0.4rem; font-size: var(--size-mini); color: var(--meta); line-height: 1.5; }
+
+/* Page */
+.page {
+  max-width: calc(800px + 2 * var(--pad)); margin-inline: auto;
+  padding-left: max(var(--pad), env(safe-area-inset-left, 0px)); padding-right: max(var(--pad), env(safe-area-inset-right, 0px));
+  padding-block: 2.5rem 7rem;
+}
+section { scroll-margin-top: 5rem; padding-top: 3rem; }
+section:first-child { padding-top: 1rem; }
+h2 { display: flex; align-items: baseline; gap: 0.45rem; font-size: var(--size-heading); font-weight: 600; letter-spacing: -0.025em; line-height: 1.2; margin: 0 0 1rem; }
+h2 .anchor { font-size: 0.9em; font-weight: 400; color: var(--meta); text-decoration: none; opacity: 0; transition: opacity 0.15s; }
+h2:hover .anchor, h2 .anchor:focus-visible { opacity: 1; }
+h3 { font-size: var(--size-body); font-weight: 600; line-height: 1.4; margin: 0; color: var(--ink); }
+
+/* Hero */
+.hero-grid { display: grid; grid-template-columns: 10.5rem minmax(0, 1fr); gap: 1.6rem; align-items: center; }
+@media (max-width: 600px) { .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .halftone-box { width: 8.5rem; } }
+.halftone-box { width: 100%; aspect-ratio: 1; max-width: 100%; border-radius: 1rem; background: var(--surface); border: 1px solid var(--rule); overflow: hidden; }
+.halftone { display: block; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+.hero h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; margin: 0; }
+.ta { display: block; margin-top: 0.45rem; font-family: var(--font-tamil); font-size: 1rem; font-weight: 500; color: var(--meta); letter-spacing: 0; }
+.lede { margin-top: 0.9rem; font-size: 0.95rem; }
+.glance { list-style: none; margin: 0.9rem 0 0; padding: 0; display: grid; gap: 0.3rem; }
+.glance li { display: grid; grid-template-columns: 1rem minmax(0, 1fr); color: var(--body); }
+.glance li::before { content: "•"; color: var(--accent); }
+.hint { margin-top: 1rem; font-size: var(--size-mini); color: var(--meta); }
+.hint b { color: var(--accent); font-weight: 600; }
+
+/* Rows */
+.rows { display: grid; gap: 0.1rem; margin-inline: -0.5rem; }
+.row {
+  display: grid; grid-template-columns: 2.25rem minmax(0, 1fr) auto; gap: 0.8rem; align-items: center;
+  padding: 0.5rem; border-radius: 0.65rem; color: inherit; text-decoration: none;
+}
+.row:hover { background: var(--hover); color: inherit; }
+.tile {
+  width: 2.25rem; height: 2.25rem; border-radius: 0.6rem; display: grid; place-items: center;
+  background: var(--hover); color: var(--ink); font-family: var(--font-pixel); font-size: 1.35rem; line-height: 1;
+}
+.row-text { display: grid; gap: 0.05rem; min-width: 0; }
+.row-sub { font-size: var(--size-mini); color: var(--meta); }
+.chip { font-size: 0.68rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 0.1rem 0.5rem; white-space: nowrap; }
+.chip.quiet { color: var(--meta); background: transparent; border: 1px solid var(--rule); }
+
+/* Experience */
+.role { border-radius: 0.65rem; }
+.role summary { list-style: none; cursor: pointer; }
+.role summary::-webkit-details-marker { display: none; }
+.role[open] summary { background: var(--hover); }
+.role-body { padding: 0.35rem 0.5rem 0.75rem 3.55rem; }
+.role-body ul { margin: 0; padding-left: 1rem; display: grid; gap: 0.25rem; color: var(--body); }
+.caret { font-size: var(--size-mini); color: var(--meta); transition: transform 0.2s ease; display: inline-block; }
+.role[open] .caret { transform: rotate(90deg); }
+.right { display: flex; align-items: center; gap: 0.5rem; }
+.more-btn {
+  margin-top: 0.5rem; border: 0; background: none; padding: 0.3rem 0; cursor: pointer;
+  font: 500 var(--size-mini) / 1.3 var(--font-body); color: var(--meta); text-decoration: underline; text-underline-offset: 0.2em;
+}
+.more-btn:hover { color: var(--ink); }
+
+/* Numbers */
+.nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 1rem; }
+@media (max-width: 520px) { .nums { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.num { border-top: 1px solid var(--rule); padding-block: 0.8rem; min-width: 0; }
+.num b { display: block; font-size: 1.6rem; font-weight: 600; letter-spacing: -0.035em; line-height: 1.1; font-variant-numeric: tabular-nums; color: var(--ink); }
+.num span { display: block; margin-top: 0.15rem; font-size: var(--size-mini); color: var(--meta); }
+
+/* Blog */
+.post { grid-template-columns: 4rem minmax(0, 1fr) auto; }
+.thumb, .banner { position: relative; overflow: hidden; background: var(--surface); }
+.thumb { width: 4rem; aspect-ratio: 1; max-width: 100%; border-radius: 0.65rem; border: 1px solid var(--rule); display: grid; place-items: center; }
+.thumb::before, .banner::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, var(--ink) 1.1px, transparent 1.5px); background-size: 6px 6px;
+  -webkit-mask-image: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.05) 75%);
+  mask-image: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.05) 75%);
+}
+.thumb span, .banner span { position: relative; font-family: var(--font-pixel); line-height: 1; color: var(--accent); }
+.thumb span { font-size: 2rem; }
+
+/* Projects */
+.proj-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+@media (max-width: 600px) { .proj-grid { grid-template-columns: minmax(0, 1fr); } }
+.proj { border: 1px solid var(--rule); border-radius: 1rem; overflow: hidden; background: var(--surface); display: flex; flex-direction: column; min-width: 0; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.proj:hover { transform: translateY(-2px); box-shadow: 0 10px 28px var(--shadow); }
+.banner { height: 6.5rem; border-bottom: 1px solid var(--rule); display: grid; place-items: center; }
+.banner::before {
+  background-image: radial-gradient(circle, var(--accent) 1.3px, transparent 1.7px); background-size: 7px 7px;
+  -webkit-mask-image: radial-gradient(circle at 70% 30%, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0) 70%);
+  mask-image: radial-gradient(circle at 70% 30%, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0) 70%);
+}
+.banner span { font-size: 3.2rem; color: var(--ink); }
+.proj-body { padding: 0.85rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
+.proj-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.6rem; }
+.stack { display: flex; flex-wrap: wrap; gap: 0.3rem; list-style: none; margin: 0; padding: 0; }
+.stack li { font-size: 0.68rem; font-weight: 500; color: var(--meta); border: 1px solid var(--rule); border-radius: 999px; padding: 0.08rem 0.45rem; }
+.links { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; margin-top: auto; padding-top: 0.2rem; font-size: var(--size-mini); font-weight: 600; }
+.sub-h { margin: 1.6rem 0 0.4rem; font-size: var(--size-mini); font-weight: 500; color: var(--meta); }
+
+/* Skills */
+.skill-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+@media (max-width: 600px) { .skill-grid { grid-template-columns: minmax(0, 1fr); } }
+.skill { border: 1px solid var(--rule); border-radius: 0.9rem; padding: 0.85rem 1rem 0.95rem; background: var(--surface); display: grid; gap: 0.25rem; }
+.skill .n { font-family: var(--font-pixel); font-size: 1.15rem; line-height: 1; color: var(--accent); }
+
+/* Goodbye */
+.bye h2 { font-family: var(--font-tamil); font-weight: 600; letter-spacing: 0; }
+.foot { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; }
+
+/* Walter */
+.walter { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 40; pointer-events: none; }
+.walter-handle { position: fixed; left: 0; top: 0; z-index: 41; cursor: grab; touch-action: none; border-radius: 12px; }
+.walter-handle.grabbing { cursor: grabbing; }
+.inset-probe { position: fixed; left: 0; bottom: 0; width: 0; height: env(safe-area-inset-bottom, 0px); pointer-events: none; visibility: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="dock-wrap">
+  <div class="dock-inner">
+    <nav class="dock" aria-label="Main">
+      <a class="dock-btn navlink" href="#home">Home <kbd>h</kbd></a>
+      <a class="dock-btn navlink" href="#experience">Experience <kbd>x</kbd></a>
+      <a class="dock-btn navlink" href="#blog">Blog <kbd>b</kbd></a>
+      <a class="dock-btn navlink" href="#projects">Projects <kbd>p</kbd></a>
+      <a class="dock-btn navlink" href="#contact">Contact <kbd>c</kbd></a>
+      <span class="dock-sep nav-sep" aria-hidden="true"></span>
+      <button type="button" class="dock-btn radio" id="radio-btn" aria-pressed="false" title="Play Tamil BGM (m)"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span id="radio-label">► Tamil BGM</span></button>
+      <button type="button" class="dock-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    </nav>
+    <div class="menu" id="menu" hidden>
+      <div class="menu-nav">
+        <a class="menu-row" href="#home">Home <kbd>h</kbd></a>
+        <a class="menu-row" href="#experience">Experience <kbd>x</kbd></a>
+        <a class="menu-row" href="#blog">Blog <kbd>b</kbd></a>
+        <a class="menu-row" href="#projects">Projects <kbd>p</kbd></a>
+        <a class="menu-row" href="#contact">Contact <kbd>c</kbd></a>
+      </div>
+      <button type="button" class="menu-row" id="sw-walter" role="switch" aria-checked="true">Show Walter <span class="state">On</span></button>
+      <button type="button" class="menu-row" id="drop-walter">Drop Walter from the sky <kbd>d</kbd></button>
+      <button type="button" class="menu-row" id="sw-sound" role="switch" aria-checked="false">Sound effects <span class="state">Off</span></button>
+      <button type="button" class="menu-row" id="sw-theme" role="switch" aria-checked="false">Dark mode <span class="state">Off</span></button>
+      <p class="menu-label">Tamil BGM style</p>
+      <div class="seg" role="group" aria-label="Tamil BGM style">
+        <button type="button" data-style="melody" aria-pressed="true">Melody</button>
+        <button type="button" data-style="kuthu" aria-pressed="false">Kuthu</button>
+      </div>
+      <label class="vol" for="bgm-vol">Volume <input type="range" id="bgm-vol" min="0" max="100" value="70"></label>
+      <p class="menu-note">The music is generated live in your browser in the style of Tamil film BGM. It is not a recording. Melody uses raga Mayamalavagowla with tanpura and mridangam; Kuthu uses raga Mohanam over a parai beat.</p>
+    </div>
+  </div>
+</div>
+
+<main class="page">
+  <section class="hero" id="home" aria-labelledby="name-h">
+    <div class="hero-grid">
+      <div class="halftone-box"><canvas class="halftone" id="halftone" role="img" aria-label="Halftone CK monogram. Move your cursor over it to push the dots."></canvas></div>
+      <div>
+        <h1 id="name-h">Chandramohan K <span class="ta" lang="ta">சந்திரமோகன்</span></h1>
+        <p class="lede">Applied Research Engineer at zeb. I like taking a problem apart to see why an approach works, where it fails and how to make it better.</p>
+        <ul class="glance">
+          <li><span>Interested in reinforcement learning, AI agents and time-series models.</span></li>
+          <li><span>Paper submitted to the FMTS workshop at NeurIPS 2026.</span></li>
+          <li><span>Applying to research-focused MS programs in computer science for Fall 2027.</span></li>
+          <li><span>Before zeb: data science intern to solution architect at Avasoft.</span></li>
+        </ul>
+        <p class="hint">Psst. <b>Walter</b> is at the bottom of your screen. Pick him up, lift him high and let go.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" aria-labelledby="research-h">
+    <h2 id="research-h">Research <a class="anchor" href="#research" aria-label="Link to Research">#</a></h2>
+    <div class="rows" id="research-rows"></div>
+  </section>
+
+  <section id="experience" aria-labelledby="experience-h">
+    <h2 id="experience-h">Experience <a class="anchor" href="#experience" aria-label="Link to Experience">#</a></h2>
+    <div class="rows" id="roles"></div>
+    <button type="button" class="more-btn" id="more-roles" aria-expanded="false"></button>
+  </section>
+
+  <section id="numbers" aria-labelledby="numbers-h">
+    <h2 id="numbers-h">By the numbers <a class="anchor" href="#numbers" aria-label="Link to By the numbers">#</a></h2>
+    <div class="nums" id="nums"></div>
+  </section>
+
+  <section id="blog" aria-labelledby="blog-h">
+    <h2 id="blog-h">Blog and writing <a class="anchor" href="#blog" aria-label="Link to Blog and writing">#</a></h2>
+    <div class="rows" id="posts"></div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <h2 id="projects-h">Featured projects <a class="anchor" href="#projects" aria-label="Link to Featured projects">#</a></h2>
+    <div class="proj-grid" id="featured"></div>
+    <p class="sub-h" id="other-h">Other projects</p>
+    <div class="rows" id="others"></div>
+  </section>
+
+  <section id="education" aria-labelledby="education-h">
+    <h2 id="education-h">Education <a class="anchor" href="#education" aria-label="Link to Education">#</a></h2>
+    <div class="rows" id="edu"></div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <h2 id="skills-h">Skills and competencies <a class="anchor" href="#skills" aria-label="Link to Skills and competencies">#</a></h2>
+    <div class="skill-grid" id="skill-grid"></div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Get in touch <a class="anchor" href="#contact" aria-label="Link to Get in touch">#</a></h2>
+    <p>Happy to talk about reinforcement learning, AI agents, time-series models, or MS programs.</p>
+    <div class="rows" style="margin-top:0.6rem">
+      <a class="row" href="https://github.com/ChandraMohan21" target="_blank" rel="noopener"><span class="tile" aria-hidden="true">G</span><span class="row-text"><h3>GitHub</h3><span class="row-sub">github.com/ChandraMohan21</span></span><span class="meta">↗</span></a>
+    </div>
+  </section>
+
+  <section class="bye" id="bye" aria-labelledby="bye-h">
+    <h2 id="bye-h" lang="ta">நன்றி</h2>
+    <p>Thanks for stopping by. Say goodbye to Walter on your way out.</p>
+    <div class="foot">
+      <span class="meta">© 2026 Chandramohan K</span>
+      <span class="meta">Keys: h x b p c to jump · m music · d drop Walter · t dark mode</span>
+    </div>
+  </section>
+</main>
+
+<canvas class="walter" id="walter" aria-hidden="true"></canvas>
+<div class="walter-handle" id="walter-handle" aria-hidden="true"></div>
+<div class="inset-probe" id="inset-probe"></div>
+
+<script>
+(() => {
+  /* ===== Content. To add something new, copy one entry and edit it. ===== */
+  const RESEARCH = [
+    { glyph: "R", title: "Reinforcement learning", sub: "Learning to act when actions have delayed effects, including RL for post-training and reasoning." },
+    { glyph: "A", title: "AI agents and planning", sub: "Sequential decision-making over long horizons." },
+    { glyph: "T", title: "Time-series models", sub: "Temporal representation learning and time-series foundation models." },
+    { glyph: "P", title: "Honest Evaluation Changes the Winner", sub: "Workshop paper, Foundation Models for Temporal Systems (FMTS), NeurIPS 2026", chip: "Submitted", href: "https://github.com/ChandraMohan21/Validate-energy-prediction" }
+  ];
+
+  const ROLES = [
+    { title: "Applied Research Engineer", org: "zeb", current: true,
+      points: ["Work across machine learning, data engineering and analytics projects.", "Before choosing a model, I ask whether machine learning is needed at all and whether a good result will hold outside the setting where I got it."] },
+    { title: "Solution Architect", org: "Avasoft",
+      points: ["Helped design how an enterprise client could organize and maintain its Microsoft Fabric environment over the long term."] },
+    { title: "Engineer", org: "Avasoft",
+      points: ["Handled enterprise clients independently, from requirements to delivery.", "Set up Databricks medallion architecture and workspaces.", "Cut the runtime of a multi-hour pipeline with parallel processing and resolved write conflicts between concurrent jobs.", "Migrated reports from Qlik to Power BI, rebuilding logic that needed correction."] },
+    { title: "Data Science Intern", org: "Avasoft",
+      points: ["Learned that real data rarely behaves as expected: source systems change, records are messy, and deadlines hold anyway."] },
+    { title: "AI Product Development Lab", org: "Bannari Amman Institute of Technology, under Prof. Haripriya M", lab: true,
+      points: ["Forecast evaluation study, parking-slot vision system and review sentiment service."] }
+  ];
+  const ROLES_SHOWN = 2;
+
+  const POSTS = [
+    { glyph: "E", title: "Honest evaluation changes the winner", topic: "Evaluation", status: "Draft" },
+    { glyph: "H", title: "What a CNN and a Transformer each see in one heartbeat", topic: "Deep learning", status: "Draft" },
+    { glyph: "D", title: "A faster pipeline is only better if you can trust it", topic: "Data engineering", status: "Draft" }
+  ];
+
+  const PROJECTS = [
+    { featured: true, glyph: "~", title: "Honest forecast evaluation", stack: ["Python", "Time series", "Chronos-Bolt"], chip: "Paper submitted",
+      text: "Tested whether published forecasting gains survive careful evaluation. Once leakage was removed, a simple seasonal baseline beat tuned models in 8 of 9 test windows, and a pretrained foundation model beat the baseline in all 9.",
+      links: [{ label: "Code", href: "https://github.com/ChandraMohan21/Validate-energy-prediction" }] },
+    { featured: true, glyph: "♥", title: "ECG heartbeat classifier", stack: ["2D CNN", "Transformer", "Streamlit"],
+      text: "Classifies single heartbeats into five classes, with a dashboard for exploring predictions. Final-year team project of four, guided by Prof. Chozharajan P.", links: [] },
+    { featured: true, glyph: "P", title: "Parking-slot finder", stack: ["Computer vision", "Real-time"],
+      text: "A real-time vision system that detects which parking slots are free and routes drivers to the nearest one.", links: [] },
+    { featured: true, glyph: "S", title: "Review sentiment service", stack: ["NLP"],
+      text: "An NLP service that scores the sentiment of customer reviews.", links: [] },
+    { featured: false, glyph: "T", title: "Adaptive traffic signal timer", stack: ["Open source"],
+      text: "Worked on a timer built on Mihir Gandhi's open-source project (Apache-2.0).",
+      links: [{ label: "Original repository", href: "https://github.com/mihir-m-gandhi/Adaptive-Traffic-Signal-Timer" }] }
+  ];
+
+  const EDUCATION = [
+    { glyph: "B", title: "B.Tech, Artificial Intelligence and Data Science", sub: "Bannari Amman Institute of Technology" },
+    { glyph: "D", title: "Diploma, Electronics and Communication Engineering", sub: "Before the B.Tech" }
+  ];
+
+  const SKILLS = [
+    { title: "Machine learning", text: "CNNs, Transformers, tree-based models, time-series forecasting, careful evaluation" },
+    { title: "Vision and signals", text: "OpenCV, spectrograms" },
+    { title: "Data engineering", text: "Databricks, AWS Glue, Microsoft Fabric" },
+    { title: "Analytics and apps", text: "Power BI, Qlik, Streamlit" }
+  ];
+  /* ===== End of content ===== */
+
+  const root = document.documentElement;
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const pick = (a) => a[Math.floor(Math.random() * a.length)];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const sysDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  function setSwitch(el, on) {
+    el.setAttribute("aria-checked", String(on));
+    const s = $(".state", el); if (s) s.textContent = on ? "On" : "Off";
+  }
+  const linkHtml = (l) => '<a href="' + esc(l.href) + '" target="_blank" rel="noopener">' + esc(l.label) + " ↗</a>";
+
+  /* ---------- Render content ---------- */
+  $("#research-rows").innerHTML = RESEARCH.map((r) => {
+    const inner = '<span class="tile" aria-hidden="true">' + esc(r.glyph) + '</span><span class="row-text"><h3>' + esc(r.title) + '</h3><span class="row-sub">' + esc(r.sub) + "</span></span>" +
+      '<span class="right">' + (r.chip ? '<span class="chip">' + esc(r.chip) + "</span>" : "") + (r.href ? '<span class="meta">↗</span>' : "") + "</span>";
+    return r.href ? '<a class="row" href="' + esc(r.href) + '" target="_blank" rel="noopener">' + inner + "</a>" : '<div class="row">' + inner + "</div>";
+  }).join("");
+
+  $("#roles").innerHTML = ROLES.map((r, i) =>
+    '<details class="role"' + (i === 0 ? " open" : "") + (i >= ROLES_SHOWN ? ' data-earlier hidden' : "") + '><summary class="row">' +
+    '<span class="tile" aria-hidden="true">' + esc(r.org.charAt(0).toUpperCase()) + '</span>' +
+    '<span class="row-text"><h3>' + esc(r.title) + '</h3><span class="row-sub">' + esc(r.org) + "</span></span>" +
+    '<span class="right">' + (r.current ? '<span class="chip">Now</span>' : "") + '<span class="caret" aria-hidden="true">›</span></span></summary>' +
+    '<div class="role-body"><ul>' + r.points.map((p) => "<li>" + esc(p) + "</li>").join("") + "</ul></div></details>").join("");
+  const moreBtn = $("#more-roles"), earlier = $$("[data-earlier]");
+  function syncMore(open) {
+    earlier.forEach((d) => { d.hidden = !open; });
+    moreBtn.setAttribute("aria-expanded", String(open));
+    moreBtn.textContent = open ? "Show fewer roles" : "Show " + earlier.length + " earlier roles";
+  }
+  moreBtn.hidden = earlier.length === 0;
+  moreBtn.addEventListener("click", () => syncMore(moreBtn.getAttribute("aria-expanded") !== "true"));
+  syncMore(false);
+
+  const workRoles = ROLES.filter((r) => !r.lab);
+  const companies = new Set(workRoles.map((r) => r.org)).size;
+  const NUMS = [
+    [PROJECTS.length, "projects so far"],
+    [RESEARCH.filter((r) => r.chip).length, "paper submitted to a NeurIPS workshop"],
+    [workRoles.length, "roles across " + companies + " companies"],
+    [EDUCATION.length, "degrees: a diploma and a B.Tech"],
+    [POSTS.length, "blog posts being written"],
+    [RESEARCH.filter((r) => !r.chip).length, "research areas I want to work in"]
+  ];
+  $("#nums").innerHTML = NUMS.map(([n, l]) => '<div class="num"><b>' + n + "</b><span>" + esc(l) + "</span></div>").join("");
+
+  $("#posts").innerHTML = POSTS.map((p) =>
+    '<div class="row post"><span class="thumb" aria-hidden="true"><span>' + esc(p.glyph) + '</span></span>' +
+    '<span class="row-text"><h3>' + esc(p.title) + '</h3><span class="row-sub">' + esc(p.topic) + "</span></span>" +
+    '<span class="chip quiet">' + esc(p.status) + "</span></div>").join("");
+
+  $("#featured").innerHTML = PROJECTS.filter((p) => p.featured).map((p) =>
+    '<article class="proj"><div class="banner" aria-hidden="true"><span>' + esc(p.glyph) + "</span></div>" +
+    '<div class="proj-body"><div class="proj-top"><h3>' + esc(p.title) + "</h3>" + (p.chip ? '<span class="chip">' + esc(p.chip) + "</span>" : "") + "</div>" +
+    "<p>" + esc(p.text) + "</p>" +
+    '<ul class="stack">' + p.stack.map((s) => "<li>" + esc(s) + "</li>").join("") + "</ul>" +
+    (p.links.length ? '<div class="links">' + p.links.map(linkHtml).join("") + "</div>" : "") + "</div></article>").join("");
+  const others = PROJECTS.filter((p) => !p.featured);
+  $("#other-h").hidden = others.length === 0;
+  $("#others").innerHTML = others.map((p) => {
+    const l = p.links[0];
+    const inner = '<span class="tile" aria-hidden="true">' + esc(p.glyph) + '</span><span class="row-text"><h3>' + esc(p.title) + '</h3><span class="row-sub">' + esc(p.text) + "</span></span>" + (l ? '<span class="meta">↗</span>' : "<span></span>");
+    return l ? '<a class="row" href="' + esc(l.href) + '" target="_blank" rel="noopener">' + inner + "</a>" : '<div class="row">' + inner + "</div>";
+  }).join("");
+
+  $("#edu").innerHTML = EDUCATION.map((e) =>
+    '<div class="row"><span class="tile" aria-hidden="true">' + esc(e.glyph) + '</span><span class="row-text"><h3>' + esc(e.title) + '</h3><span class="row-sub">' + esc(e.sub) + "</span></span><span></span></div>").join("");
+
+  $("#skill-grid").innerHTML = SKILLS.map((s, i) =>
+    '<div class="skill"><span class="n">' + String(i + 1).padStart(3, "0") + "</span><h3>" + esc(s.title) + "</h3><p>" + esc(s.text) + "</p></div>").join("");
+
+  /* ---------- Theme tokens for canvases ---------- */
+  const T = {};
+  function readTokens() {
+    const cs = getComputedStyle(root);
+    ["bg", "surface", "ink", "meta", "accent"].forEach((k) => { T[k] = cs.getPropertyValue("--" + k).trim(); });
+    if (ht.dots.length) htDraw();
+  }
+
+  /* ---------- Menu ---------- */
+  const menuBtn = $("#menu-btn"), menu = $("#menu");
+  function openMenu(open) { menu.hidden = !open; menuBtn.setAttribute("aria-expanded", String(open)); }
+  menuBtn.addEventListener("click", (e) => { e.stopPropagation(); openMenu(menu.hidden); });
+  document.addEventListener("click", (e) => { if (!menu.hidden && !e.target.closest(".dock-inner")) openMenu(false); });
+  menu.addEventListener("click", (e) => { if (e.target.closest("a.menu-row")) openMenu(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hidden) { openMenu(false); menuBtn.focus(); } });
+
+  /* ---------- Sound effects ---------- */
+  const swSound = $("#sw-sound");
+  let soundOn = false, actx = null, master = null, noiseBuf = null;
+  function audio() {
+    if (!actx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      actx = new AC();
+      master = actx.createGain(); master.gain.value = 0.9; master.connect(actx.destination);
+      noiseBuf = actx.createBuffer(1, actx.sampleRate, actx.sampleRate);
+      const d = noiseBuf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    }
+    if (actx.state === "suspended") actx.resume();
+    return actx;
+  }
+  function env(g, t, peak, attack, release) {
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(Math.max(0.0002, peak), t + attack);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + attack + release);
+  }
+  function blip(freq = 660, dur = 0.07, vol = 0.045) {
+    if (!soundOn) return;
+    const c = audio(); if (!c) return;
+    const t = c.currentTime, o = c.createOscillator(), g = c.createGain();
+    o.type = "triangle"; o.frequency.setValueAtTime(freq, t); o.frequency.exponentialRampToValueAtTime(freq * 1.4, t + dur);
+    env(g, t, vol, 0.006, dur); o.connect(g); g.connect(master); o.start(t); o.stop(t + dur + 0.03);
+  }
+  function thud(vol = 0.25) {
+    if (!soundOn) return;
+    const c = audio(); if (!c) return;
+    const t = c.currentTime, o = c.createOscillator(), g = c.createGain();
+    o.type = "sine"; o.frequency.setValueAtTime(160, t); o.frequency.exponentialRampToValueAtTime(45, t + 0.18);
+    env(g, t, vol, 0.004, 0.25); o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.32);
+  }
+  function whoosh() {
+    if (!soundOn) return;
+    const c = audio(); if (!c) return;
+    const t = c.currentTime, s = c.createBufferSource(), f = c.createBiquadFilter(), g = c.createGain();
+    s.buffer = noiseBuf; f.type = "bandpass"; f.Q.value = 0.9;
+    f.frequency.setValueAtTime(500, t); f.frequency.exponentialRampToValueAtTime(2400, t + 0.3);
+    env(g, t, 0.05, 0.05, 0.3); s.connect(f); f.connect(g); g.connect(master); s.start(t); s.stop(t + 0.4);
+  }
+  function setSound(on, fromUser = true) {
+    soundOn = on; setSwitch(swSound, on);
+    if (fromUser) { store.set("ck-sound", on ? "on" : "off"); if (on) blip(880); }
+  }
+  swSound.addEventListener("click", () => setSound(!soundOn));
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("button, a, summary");
+    if (!el || el === swSound) return;
+    blip(660);
+  });
+
+  /* ---------- Tamil BGM, generated live ---------- */
+  const SA = 146.83;
+  const MAYA = [0, 1, 4, 5, 7, 8, 11];
+  const MOHA = [0, 2, 4, 7, 9];
+  const STYLES = {
+    melody: { label: "Melody", step: 60 / 76 / 2, cycle: 16 },
+    kuthu: { label: "Kuthu", step: 60 / 100 / 3, cycle: 12 }
+  };
+  const bgm = { on: false, style: store.get("ck-bgm-style") === "kuthu" ? "kuthu" : "melody", vol: 0.7, out: null, comp: null, timer: 0, next: 0, step: 0, lead: null, deg: 7, noteUntil: 0, motif: null, bar: 0 };
+  const radioBtn = $("#radio-btn"), radioLabel = $("#radio-label"), volInput = $("#bgm-vol");
+  const deg2semi = (scale, d) => { const n = scale.length, o = Math.floor(d / n), i = ((d % n) + n) % n; return scale[i] + 12 * o; };
+  const hz = (semi, base) => base * Math.pow(2, semi / 12);
+  function drum(t, f0, f1, dur, peak, type) {
+    const o = actx.createOscillator(), g = actx.createGain();
+    o.type = type || "sine"; o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(f1, t + dur * 0.6);
+    env(g, t, peak, 0.003, dur); o.connect(g); g.connect(bgm.out); o.start(t); o.stop(t + dur + 0.05);
+  }
+  function hit(t, type, freq, q, peak, dur) {
+    const s = actx.createBufferSource(), f = actx.createBiquadFilter(), g = actx.createGain();
+    s.buffer = noiseBuf; f.type = type; f.frequency.value = freq; f.Q.value = q;
+    env(g, t, peak, 0.002, dur); s.connect(f); f.connect(g); g.connect(bgm.out);
+    s.start(t, Math.random() * 0.5); s.stop(t + dur + 0.05);
+  }
+  function pluck(t, freq, peak, dur) {
+    const f = actx.createBiquadFilter(), g = actx.createGain();
+    f.type = "lowpass"; f.frequency.value = 2200; env(g, t, peak, 0.012, dur); f.connect(g); g.connect(bgm.out);
+    [-4, 4].forEach((cents) => { const o = actx.createOscillator(); o.type = "sawtooth"; o.frequency.value = freq; o.detune.value = cents; o.connect(f); o.start(t); o.stop(t + dur + 0.05); });
+  }
+  function makeLead(type, filterType, filterFreq, q, vib) {
+    const o = actx.createOscillator(), f = actx.createBiquadFilter(), g = actx.createGain(), lfo = actx.createOscillator(), lg = actx.createGain();
+    o.type = type; o.frequency.value = SA * 2; f.type = filterType; f.frequency.value = filterFreq; f.Q.value = q;
+    g.gain.value = 0.0001; lfo.frequency.value = vib; lg.gain.value = 0;
+    lfo.connect(lg); lg.connect(o.frequency); o.connect(f); f.connect(g); g.connect(bgm.out);
+    o.start(); lfo.start();
+    return { o, g, lg, lfo };
+  }
+  function leadNote(v, t, f, dur, level, slide, gamakaTo) {
+    v.o.frequency.setTargetAtTime(f, t, slide);
+    v.lg.gain.setTargetAtTime(f * 0.007, t + 0.12, 0.2);
+    v.g.gain.setTargetAtTime(level, t, 0.025);
+    v.g.gain.setTargetAtTime(level * 0.7, t + 0.12, 0.12);
+    if (gamakaTo) {
+      for (let k = 1, at = t + 0.28; at < t + dur - 0.2; k++, at += 0.15) v.o.frequency.setTargetAtTime(k % 2 ? gamakaTo : f, at, 0.04);
+    }
+    v.g.gain.setTargetAtTime(0.0001, t + dur - 0.05, 0.03);
+  }
+  const MRIDANGAM = ["tha", "ka", "dhi", "ka", "num", "", "dhi", "ka", "tha", "ka", "dhi", "ka", "num", "ka", "dhi", "dhi"];
+  function scheduleMelody(step, t) {
+    const S = STYLES.melody.step, b = step % 16;
+    if (b % 2 === 0) pluck(t, [SA * 0.75, SA, SA, SA / 2][(b / 2) % 4], 0.045, 2.6);
+    switch (MRIDANGAM[b]) {
+      case "tha": drum(t, 120, 66, 0.28, 0.22); break;
+      case "num": drum(t, SA * 2, SA * 1.96, 0.5, 0.07, "triangle"); break;
+      case "dhi": drum(t, SA * 2, SA * 2, 0.13, 0.07, "triangle"); hit(t, "bandpass", 2600, 1.2, 0.035, 0.05); break;
+      case "ka": hit(t, "bandpass", 3400, 1.5, 0.05, 0.035); break;
+    }
+    if (b % 2 === 0 && t >= bgm.noteUntil - 0.001) {
+      if (Math.random() < 0.8) {
+        bgm.deg = clamp(bgm.deg + pick([-2, -1, -1, 0, 1, 1, 2]), 0, 13);
+        const dur = pick([1, 1, 2, 2, 3]) * 2 * S, f = hz(deg2semi(MAYA, bgm.deg), SA * 2);
+        const up = dur > 3 * S && Math.random() < 0.5 ? hz(deg2semi(MAYA, bgm.deg + 1), SA * 2) : 0;
+        leadNote(bgm.lead, t, f, dur, 0.1, 0.035, up);
+        bgm.noteUntil = t + dur;
+      } else bgm.noteUntil = t + 2 * S;
+    }
+  }
+  function makeMotif() {
+    const slots = [0, 2, 3, 6, 8, 9], m = new Array(12).fill(null);
+    let d = clamp(bgm.deg + pick([-2, -1, 1, 2]), 2, 9);
+    slots.forEach((s) => { d = clamp(d + pick([-1, -1, 0, 1, 1, 2, -2]), 0, 10); m[s] = d; });
+    return m;
+  }
+  function scheduleKuthu(step, t) {
+    const S = STYLES.kuthu.step, s = step % 12;
+    if (s % 3 === 0) { drum(t, 105, 52, 0.3, 0.3); hit(t, "bandpass", 900, 0.8, 0.12, 0.08); }
+    if (s % 3 === 2) hit(t, "bandpass", 2200, 1.0, 0.13, 0.07);
+    if (s % 3 === 1) hit(t, "bandpass", 1500, 1.0, 0.035, 0.05);
+    hit(t, "highpass", 8000, 0.7, s % 3 === 0 ? 0.04 : 0.02, 0.04);
+    if (s === 0) {
+      drum(t, SA / 2, SA / 2, 0.9, 0.12);
+      if (!bgm.motif || bgm.bar % 2 === 0) bgm.motif = makeMotif();
+      bgm.bar++;
+    }
+    const d = bgm.motif[s];
+    if (d !== null) {
+      let len = 1; while (s + len < 12 && bgm.motif[s + len] === null) len++;
+      bgm.deg = d;
+      leadNote(bgm.lead, t, hz(deg2semi(MOHA, d), SA * 2), len * S, 0.07, 0.025, 0);
+    }
+  }
+  function bgmTick() {
+    const st = STYLES[bgm.style];
+    while (bgm.next < actx.currentTime + 0.15) {
+      (bgm.style === "melody" ? scheduleMelody : scheduleKuthu)(bgm.step, bgm.next);
+      bgm.next += st.step; bgm.step = (bgm.step + 1) % (st.cycle * 64);
+    }
+  }
+  function syncRadio() {
+    radioBtn.setAttribute("aria-pressed", String(bgm.on));
+    radioLabel.textContent = bgm.on ? "Tamil BGM · " + STYLES[bgm.style].label : "► Tamil BGM";
+    $$(".seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.style === bgm.style)));
+  }
+  function startBgm() {
+    const c = audio(); if (!c) return;
+    if (!bgm.out) {
+      bgm.comp = c.createDynamicsCompressor(); bgm.comp.threshold.value = -16; bgm.comp.ratio.value = 4; bgm.comp.connect(master);
+      bgm.out = c.createGain(); bgm.out.gain.value = 0; bgm.out.connect(bgm.comp);
+    }
+    bgm.lead = bgm.style === "melody" ? makeLead("sine", "lowpass", 3200, 0.5, 5.2) : makeLead("sawtooth", "bandpass", 1300, 1.2, 6.2);
+    bgm.deg = bgm.style === "melody" ? 7 : 6; bgm.noteUntil = 0; bgm.motif = null; bgm.bar = 0;
+    bgm.out.gain.cancelScheduledValues(c.currentTime); bgm.out.gain.setTargetAtTime(bgm.vol, c.currentTime, 0.08);
+    bgm.next = c.currentTime + 0.08; bgm.step = 0;
+    clearInterval(bgm.timer); bgm.timer = setInterval(bgmTick, 25);
+    bgm.on = true; syncRadio();
+  }
+  function stopBgm() {
+    clearInterval(bgm.timer); bgm.on = false;
+    if (actx && bgm.out) bgm.out.gain.setTargetAtTime(0, actx.currentTime, 0.08);
+    if (bgm.lead) { const v = bgm.lead; v.g.gain.setTargetAtTime(0.0001, actx.currentTime, 0.05); v.o.stop(actx.currentTime + 0.4); v.lfo.stop(actx.currentTime + 0.4); bgm.lead = null; }
+    syncRadio();
+  }
+  const toggleBgm = () => (bgm.on ? stopBgm() : startBgm());
+  radioBtn.addEventListener("click", toggleBgm);
+  $$(".seg button").forEach((b) => b.addEventListener("click", () => {
+    if (bgm.style === b.dataset.style) return;
+    const was = bgm.on; if (was) stopBgm();
+    bgm.style = b.dataset.style; store.set("ck-bgm-style", bgm.style);
+    if (was) startBgm(); else syncRadio();
+  }));
+  volInput.addEventListener("input", () => {
+    bgm.vol = Number(volInput.value) / 100;
+    if (bgm.on && actx) bgm.out.gain.setTargetAtTime(bgm.vol, actx.currentTime, 0.05);
+  });
+
+  /* ---------- Halftone CK mark ---------- */
+  const htCv = $("#halftone"), htx = htCv.getContext("2d");
+  const ht = { size: 0, dots: [], px: -999, py: -999, raf: 0, active: false };
+  function htBuild() {
+    const css = Math.round(htCv.clientWidth || 168);
+    if (!css) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    ht.size = css; htCv.width = Math.round(css * dpr); htCv.height = Math.round(css * dpr); htx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const off = document.createElement("canvas"); off.width = css; off.height = css;
+    const o = off.getContext("2d");
+    o.fillStyle = "#000"; o.textAlign = "center"; o.textBaseline = "middle";
+    o.font = "700 " + Math.round(css * 0.56) + "px Inter, Arial, sans-serif";
+    o.fillText("CK", css / 2, css * 0.53);
+    const img = o.getImageData(0, 0, css, css).data, step = css < 150 ? 5 : 6;
+    ht.dots = [];
+    for (let y = step / 2; y < css; y += step) for (let x = step / 2; x < css; x += step) {
+      const a = img[(Math.floor(y) * css + Math.floor(x)) * 4 + 3] / 255;
+      const dx = x - css * 0.72, dy = y - css * 0.28, halo = Math.max(0, 1 - Math.hypot(dx, dy) / (css * 0.62)) * 0.55;
+      const ink = a > 0.35;
+      const v = ink ? a : halo;
+      if (v > 0.06) ht.dots.push({ hx: x, hy: y, x, y, vx: 0, vy: 0, r: step * 0.48 * Math.sqrt(v), ink });
+    }
+    htDraw();
+  }
+  function htDraw() {
+    if (!ht.size) return;
+    htx.clearRect(0, 0, ht.size, ht.size);
+    ["accent", "ink"].forEach((k) => {
+      htx.fillStyle = T[k]; htx.beginPath();
+      ht.dots.forEach((d) => { if (d.ink === (k === "ink")) { htx.moveTo(d.x + d.r, d.y); htx.arc(d.x, d.y, d.r, 0, Math.PI * 2); } });
+      htx.fill();
+    });
+  }
+  function htStep() {
+    let moving = false;
+    const R = ht.size * 0.22;
+    ht.dots.forEach((d) => {
+      const dx = d.x - ht.px, dy = d.y - ht.py, dist = Math.hypot(dx, dy);
+      if (dist < R && dist > 0.01) { const f = ((R - dist) / R) * 2.2; d.vx += (dx / dist) * f; d.vy += (dy / dist) * f; }
+      d.vx += (d.hx - d.x) * 0.07; d.vy += (d.hy - d.y) * 0.07; d.vx *= 0.8; d.vy *= 0.8;
+      d.x += d.vx; d.y += d.vy;
+      if (Math.abs(d.vx) + Math.abs(d.vy) + Math.abs(d.x - d.hx) + Math.abs(d.y - d.hy) > 0.08) moving = true;
+    });
+    htDraw();
+    ht.raf = moving || ht.active ? requestAnimationFrame(htStep) : 0;
+  }
+  htCv.addEventListener("pointermove", (e) => {
+    const r = htCv.getBoundingClientRect();
+    ht.px = e.clientX - r.left; ht.py = e.clientY - r.top; ht.active = true;
+    if (!ht.raf && !reduceMotion) ht.raf = requestAnimationFrame(htStep);
+  });
+  htCv.addEventListener("pointerleave", () => { ht.px = ht.py = -999; ht.active = false; });
+
+  /* ---------- Walter ---------- */
+  const wcv = $("#walter"), wx = wcv.getContext("2d"), handle = $("#walter-handle"), swWalter = $("#sw-walter");
+  const PX = 3;
+  const HEAD = ["...HHHHHH...", "...BBBBBB...", ".HHHHHHHHHH.", "...SSSSSS...", "...SSSSSS...", "..GLLGGLLG..", "...SSSSSS...", "...SWWWWS...", "...SWSSWS...", "....WWWW....", ".....SS....."];
+  const ARMS_DOWN = ["..KKKRRKKK..", ".KKKKRRKKKK.", ".KKKKRRKKKK.", ".KKKKKKKKKK.", ".KKKKKKKKKK.", ".KKKKKKKKKK.", ".S.PPPPPP.S."];
+  const LEGS_A = ["...PPPPPP...", "...PP..PP...", "...PP..PP...", "..FFF..FFF.."];
+  const LEGS_B = ["...PPPPPP...", "....PPPP....", "....PPPP....", "...FFFFFF..."];
+  const UP_TOP = HEAD.slice(0, 7).concat(["S..SWWWWS..S", "K..SWSSWS..K", "K...WWWW...K", "K....SS....K", "KKKKKRRKKKKK", "..KKKRRKKK..", "..KKKRRKKK..", "..KKKKKKKK..", "..KKKKKKKK..", "..KKKKKKKK..", "...PPPPPP..."]);
+  const WAVE_A = HEAD.slice(0, 7).concat(["...SWWWWS..S", "...SWSSWS..K", "....WWWW...K", ".....SS....K", "..KKKRRKKKKK", ".KKKKRRKKK..", ".KKKKRRKKK..", ".KKKKKKKKK..", ".KKKKKKKKK..", ".KKKKKKKKK..", ".S.PPPPPP..."]).concat(LEGS_A);
+  const WAVE_B = HEAD.slice(0, 6).concat(["...SSSSSS.S.", "...SWWWWS.K.", "...SWSSWS.K.", "....WWWW..K.", ".....SS...K.", "..KKKRRKKKK."]).concat([".KKKKRRKKK..", ".KKKKRRKKK..", ".KKKKKKKKK..", ".KKKKKKKKK..", ".KKKKKKKKK..", ".S.PPPPPP..."]).concat(LEGS_A);
+  const SPR = {
+    stand: HEAD.concat(ARMS_DOWN, LEGS_A),
+    step: HEAD.concat(ARMS_DOWN, LEGS_B),
+    sit: HEAD.concat(ARMS_DOWN, ["..PPPPPPPP..", ".FFF....FFF."]),
+    up: UP_TOP.concat(LEGS_A),
+    up2: UP_TOP.concat(LEGS_B),
+    waveA: WAVE_A, waveB: WAVE_B
+  };
+  const PAL = { H: "#1B1B1B", B: "#5E5A53", S: "#E9B98F", G: "#262626", L: "#D6E7EE", W: "#6B5038", K: "#C2AD74", R: "#6E8B57", P: "#6F6247", F: "#3A2A1E" };
+  const LINES = {
+    hint: ["You can drag me, you know.", "Lift me up high. I packed a parachute."],
+    idle: ["Say my name.", "I am the one who knocks.", "Tread lightly.", "Chemistry is the study of change.", "Try the Tamil BGM. Top right."],
+    wave: ["Hello there.", "Say my name.", "Oh. Hi."],
+    click: ["Say my name.", "Careful. I bruise.", "Yes?"],
+    drag: ["Put me down!", "Whoa whoa whoa.", "This is not a controlled reaction!", "Jesse! Help!"],
+    float: ["Science, yeah!", "Wheeee.", "Nailed the landing. Probably."],
+    splat: ["I'm fine. I'm fine.", "That was not a controlled reaction.", "Ow."],
+    sky: ["Incoming!", "Say my name!"]
+  };
+  const W = {
+    on: false, raf: 0, lastTs: 0, T: 0, vw: 0, vh: 0, ground: 0, inited: false,
+    x: 140, y: 0, vx: 0, vy: 0, facing: 1, state: "idle", t: 0, dur: 2, frameT: 0, rot: 0, sx: 1, sy: 1, chute: 0, canChute: false,
+    bubble: null, bubbleUntil: 0, lastChat: -99, blink: 0, nextBlink: 2, zs: [], zNext: 0, lastWave: -99, hinted: false,
+    dragging: false, gdx: 0, gdy: 0, samples: [], downAt: 0, downX: 0, downY: 0, moved: false
+  };
+  const ptr = { x: -999, y: -999, active: false };
+  function wSize() {
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    W.vw = document.documentElement.clientWidth || window.innerWidth; W.vh = window.innerHeight;
+    wcv.width = Math.round(W.vw * dpr); wcv.height = Math.round(W.vh * dpr); wx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const inset = $("#inset-probe").getBoundingClientRect().height || 0;
+    W.ground = W.vh - 8 - inset;
+    if (!W.inited) { W.inited = true; W.x = clamp(Math.round(W.vw * 0.18), 40, W.vw - 40); W.y = W.ground; }
+    W.x = clamp(W.x, 24, W.vw - 24);
+    if (W.y > W.ground) W.y = W.ground;
+  }
+  function say(text, sec) { W.bubble = text; W.bubbleUntil = W.T + (sec || 2.6); W.lastChat = W.T; }
+  function setState(s, dur) { W.state = s; W.t = 0; W.dur = dur || 0; }
+  function nextIdle() {
+    const r = Math.random();
+    if (r < 0.5) { W.facing = Math.random() < 0.5 ? -1 : 1; setState("walk", 2 + Math.random() * 4); }
+    else if (r < 0.66) setState("sit", 3 + Math.random() * 4);
+    else if (r < 0.78) setState("sleep", 7 + Math.random() * 7);
+    else { setState("idle", 2 + Math.random() * 3); if (W.T - W.lastChat > 9 && Math.random() < 0.6) say(pick(LINES.idle)); }
+  }
+  function walls() {
+    if (W.x < 24) { W.x = 24; W.vx = Math.abs(W.vx) * 0.5; }
+    if (W.x > W.vw - 24) { W.x = W.vw - 24; W.vx = -Math.abs(W.vx) * 0.5; }
+    if (W.y < 90) { W.y = 90; if (W.vy < 0) W.vy = 0; }
+  }
+  function land(impact) {
+    W.y = W.ground; W.rot = 0; W.vx = 0; W.vy = 0;
+    if (impact > 950 || (!W.canChute && impact > 650)) { setState("splat"); thud(0.3); }
+    else { setState("idle", 1.2 + Math.random() * 2); blip(420, 0.06, 0.03); }
+  }
+  function wUpdate(dt) {
+    W.T += dt; W.t += dt;
+    if (W.T > W.nextBlink) { W.blink = 0.12; W.nextBlink = W.T + 2 + Math.random() * 3.5; }
+    W.blink = Math.max(0, W.blink - dt);
+    const airborne = W.state === "drag" || W.state === "fall" || W.state === "float";
+    switch (W.state) {
+      case "idle":
+        if (!W.hinted && W.T > 4) { W.hinted = true; say(pick(LINES.hint), 3.6); }
+        if (W.t > W.dur) nextIdle();
+        break;
+      case "walk":
+        W.x += W.facing * 50 * dt; W.frameT += dt;
+        if (W.x <= 30) { W.x = 30; W.facing = 1; }
+        if (W.x >= W.vw - 30) { W.x = W.vw - 30; W.facing = -1; }
+        if (W.t > W.dur) setState("idle", 1.5 + Math.random() * 2.5);
+        break;
+      case "sit": if (W.t > W.dur) setState("idle", 1 + Math.random() * 2); break;
+      case "sleep":
+        if (W.T > W.zNext) { W.zs.push({ x: W.x + 12, y: W.ground - 52, life: 0 }); W.zNext = W.T + 0.9; }
+        if (W.t > W.dur) setState("idle", 1.5);
+        break;
+      case "wave": W.frameT += dt; if (W.t > 1.6) setState("idle", 1 + Math.random() * 2); break;
+      case "drag": W.frameT += dt; W.rot *= 0.9; break;
+      case "fall":
+        W.vy += 2200 * dt; W.x += W.vx * dt; W.y += W.vy * dt; W.frameT += dt;
+        W.rot += (clamp(W.vx * 0.0003, -0.4, 0.4) - W.rot) * Math.min(1, dt * 6);
+        walls();
+        if (W.canChute && W.t > 0.16) { setState("float"); blip(300, 0.12, 0.05); say(pick(LINES.float), 2.4); }
+        else if (W.y >= W.ground) land(W.vy);
+        break;
+      case "float":
+        W.chute = Math.min(1, W.chute + dt * 3.5);
+        W.vy += (72 - W.vy) * Math.min(1, dt * 2.5);
+        W.vx += (Math.sin(W.T * 1.4) * 35 - W.vx) * Math.min(1, dt * 1.2);
+        W.x += W.vx * dt; W.y += W.vy * dt; W.rot = Math.sin(W.T * 1.8) * 0.12; W.frameT += dt;
+        walls();
+        if (W.y >= W.ground) { W.y = W.ground; W.vx = W.vy = 0; setState("land"); blip(420, 0.06, 0.03); }
+        break;
+      case "land":
+        W.chute = Math.max(0, W.chute - dt * 2.2); W.rot *= 0.85;
+        if (W.t > 0.7) { W.chute = 0; W.rot = 0; setState("idle", 1.5 + Math.random() * 2); }
+        break;
+      case "splat": {
+        const t = W.t;
+        if (t < 0.08) { W.sy = 1 - (t / 0.08) * 0.5; W.sx = 1 + (t / 0.08) * 0.4; }
+        else if (t < 0.9) { W.sy = 0.5; W.sx = 1.4; }
+        else if (t < 1.3) { const k = (t - 0.9) / 0.4, e = 1 - Math.pow(1 - k, 3); W.sy = 0.5 + 0.55 * e; W.sx = 1.4 - 0.45 * e; }
+        else { W.sy = 1; W.sx = 1; }
+        if (t > 1.6) { W.sx = W.sy = 1; setState("idle", 1.4); say(pick(LINES.splat)); }
+        break;
+      }
+    }
+    if (!airborne && W.state !== "splat" && W.state !== "land") {
+      if (W.y < W.ground - 1) { W.vx = 0; W.vy = 0; W.canChute = W.ground - W.y > 150; setState("fall"); }
+      else W.y = W.ground;
+    }
+    if ((W.state === "idle" || W.state === "walk" || W.state === "sit") && ptr.active && W.T - W.lastWave > 10) {
+      if (Math.hypot(ptr.x - W.x, ptr.y - (W.y - 45)) < 110) { W.lastWave = W.T; W.facing = ptr.x >= W.x ? 1 : -1; setState("wave"); say(pick(LINES.wave), 2); }
+    }
+    W.zs.forEach((z) => { z.life += dt; z.y -= 16 * dt; z.x += Math.sin(z.life * 3) * 8 * dt; });
+    W.zs = W.zs.filter((z) => z.life < 2.2);
+    if (W.bubble && W.T > W.bubbleUntil) W.bubble = null;
+  }
+  function rrect(c, x, y, w, h, r) {
+    c.beginPath(); c.moveTo(x + r, y); c.lineTo(x + w - r, y); c.quadraticCurveTo(x + w, y, x + w, y + r);
+    c.lineTo(x + w, y + h - r); c.quadraticCurveTo(x + w, y + h, x + w - r, y + h); c.lineTo(x + r, y + h);
+    c.quadraticCurveTo(x, y + h, x, y + h - r); c.lineTo(x, y + r); c.quadraticCurveTo(x, y, x + r, y); c.closePath();
+  }
+  function spriteFor() {
+    const alt = Math.floor(W.frameT * 7) % 2;
+    switch (W.state) {
+      case "walk": return Math.floor(W.frameT * 6) % 2 ? SPR.step : SPR.stand;
+      case "sit": case "sleep": return SPR.sit;
+      case "wave": return Math.floor(W.frameT * 5) % 2 ? SPR.waveB : SPR.waveA;
+      case "drag": case "float": return alt ? SPR.up2 : SPR.up;
+      case "fall": return W.canChute ? (alt ? SPR.up2 : SPR.up) : SPR.stand;
+      case "land": return W.chute > 0.2 ? SPR.up : SPR.stand;
+      default: return SPR.stand;
+    }
+  }
+  function drawRows(c, rows, flip, closed) {
+    const w = 12 * PX, h = rows.length * PX;
+    for (let r = 0; r < rows.length; r++) {
+      for (let k = 0; k < 12; k++) {
+        let ch = rows[r][flip ? 11 - k : k];
+        if (ch === ".") continue;
+        if (closed && ch === "L") ch = "G";
+        c.fillStyle = PAL[ch]; c.fillRect(-w / 2 + k * PX, -h + r * PX, PX + 0.35, PX + 0.35);
+      }
+    }
+  }
+  function drawChute(c, h, amount) {
+    const rw = 52 * amount, rh = 34 * amount, cy = -h - 46 * amount;
+    if (rw < 2) return;
+    c.strokeStyle = T.meta; c.lineWidth = 1;
+    [[-rw, -15], [-rw * 0.4, -12], [rw * 0.4, 12], [rw, 15]].forEach(([sx, hx]) => { c.beginPath(); c.moveTo(sx, cy); c.lineTo(hx, -h + 8 * PX); c.stroke(); });
+    c.save();
+    c.beginPath(); c.ellipse(0, cy, rw, rh, 0, Math.PI, 0); c.closePath(); c.clip();
+    const n = 6, sw = (2 * rw) / n;
+    for (let i = 0; i < n; i++) { c.fillStyle = i % 2 ? T.surface : T.accent; c.fillRect(-rw + i * sw, cy - rh, sw + 0.5, rh + 1); }
+    c.restore();
+    c.beginPath(); c.ellipse(0, cy, rw, rh, 0, Math.PI, 0); c.closePath();
+    c.strokeStyle = T.ink; c.lineWidth = 1.5; c.stroke();
+  }
+  function star(c, x, y, r) {
+    c.beginPath();
+    for (let i = 0; i < 8; i++) { const a = (i * Math.PI) / 4, rr = i % 2 ? r * 0.4 : r; c.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr); }
+    c.closePath(); c.fill();
+  }
+  function drawBubble(c, text, anchorX, anchorY) {
+    c.font = "22px VT323, ui-monospace, monospace";
+    const tw = c.measureText(text).width, bw = tw + 18, bh = 28;
+    const bx = clamp(anchorX - bw / 2, 6, W.vw - bw - 6), by = Math.max(6, anchorY - bh - 10);
+    rrect(c, bx, by, bw, bh, 8);
+    c.fillStyle = T.surface; c.fill(); c.lineWidth = 1.5; c.strokeStyle = T.ink; c.stroke();
+    const tx = clamp(anchorX, bx + 10, bx + bw - 10);
+    c.beginPath(); c.moveTo(tx - 5, by + bh); c.lineTo(tx, by + bh + 7); c.lineTo(tx + 5, by + bh); c.closePath(); c.fillStyle = T.ink; c.fill();
+    c.fillStyle = T.ink; c.textAlign = "left"; c.textBaseline = "middle"; c.fillText(text, bx + 9, by + bh / 2 + 1);
+  }
+  function wDraw() {
+    const c = wx;
+    c.clearRect(0, 0, W.vw, W.vh);
+    const rows = spriteFor(), h = rows.length * PX;
+    const height = W.ground - W.y;
+    c.save(); c.globalAlpha = 0.16 * (1 - Math.min(1, height / 420)); c.fillStyle = T.ink;
+    c.beginPath(); c.ellipse(W.x, W.ground + 2, 18 * W.sx, 4, 0, 0, Math.PI * 2); c.fill(); c.restore();
+    c.save();
+    if (W.state === "drag") { c.translate(W.x, W.y - h); c.rotate(W.rot); c.translate(0, h); }
+    else { c.translate(W.x, W.y); c.rotate(W.rot); }
+    if (W.chute > 0) drawChute(c, h, W.chute);
+    c.scale(W.sx, W.sy);
+    drawRows(c, rows, W.facing < 0, W.blink > 0 || W.state === "sleep");
+    c.restore();
+    if (W.state === "splat" && W.t > 0.1 && W.t < 1.5) {
+      c.fillStyle = T.accent;
+      for (let i = 0; i < 3; i++) { const a = W.T * 4 + (i * Math.PI * 2) / 3; star(c, W.x + Math.cos(a) * 18, W.ground - h * W.sy - 8 + Math.sin(a) * 5, 4); }
+    }
+    c.font = "18px VT323, ui-monospace, monospace"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillStyle = T.meta;
+    W.zs.forEach((z) => { c.globalAlpha = Math.max(0, 1 - z.life / 2.2); c.fillText("z", z.x, z.y); });
+    c.globalAlpha = 1;
+    if (W.bubble) {
+      const top = W.y - h * W.sy - (W.chute > 0 ? 46 * W.chute + 34 * W.chute : 0);
+      drawBubble(c, W.bubble, W.x, top);
+    }
+    const hh = h + 10;
+    handle.style.width = "48px"; handle.style.height = hh + "px";
+    handle.style.transform = "translate(" + Math.round(W.x - 24) + "px," + Math.round(W.y - hh + 4) + "px)";
+  }
+  function wLoop(ts) {
+    if (!W.on) return;
+    const dt = Math.min(0.05, W.lastTs ? (ts - W.lastTs) / 1000 : 0.016);
+    W.lastTs = ts;
+    wUpdate(dt); wDraw();
+    W.raf = requestAnimationFrame(wLoop);
+  }
+  function setWalter(on, save = true) {
+    W.on = on; wcv.hidden = !on; handle.hidden = !on; setSwitch(swWalter, on);
+    if (save) store.set("ck-walter", on ? "on" : "off");
+    cancelAnimationFrame(W.raf); W.lastTs = 0;
+    if (on) { wSize(); W.raf = requestAnimationFrame(wLoop); }
+  }
+  function dropFromSky() {
+    if (!W.on) setWalter(true);
+    W.x = clamp(W.vw * (0.3 + Math.random() * 0.4), 40, W.vw - 40); W.y = 100; W.vx = 0; W.vy = 0; W.sx = W.sy = 1;
+    W.canChute = true; setState("fall"); say(pick(LINES.sky), 1.8); whoosh();
+  }
+  handle.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
+    try { handle.setPointerCapture(e.pointerId); } catch (err) {}
+    const now = performance.now();
+    W.dragging = true; W.moved = false; W.downAt = now; W.downX = e.clientX; W.downY = e.clientY;
+    W.gdx = W.x - e.clientX; W.gdy = W.y - e.clientY; W.samples = [{ x: e.clientX, y: e.clientY, t: now }];
+    W.chute = 0; W.sx = W.sy = 1; setState("drag"); handle.classList.add("grabbing");
+    blip(760, 0.06, 0.04);
+  });
+  handle.addEventListener("pointermove", (e) => {
+    if (!W.dragging) return;
+    const now = performance.now();
+    if (!W.moved && Math.hypot(e.clientX - W.downX, e.clientY - W.downY) > 6) { W.moved = true; say(pick(LINES.drag), 1.8); }
+    const lastX = W.x;
+    W.x = clamp(e.clientX + W.gdx, 24, W.vw - 24);
+    W.y = clamp(e.clientY + W.gdy, 90, W.ground);
+    W.rot = clamp(W.rot + (W.x - lastX) * -0.02, -0.6, 0.6);
+    W.samples.push({ x: e.clientX, y: e.clientY, t: now });
+    while (W.samples.length > 6) W.samples.shift();
+  });
+  function release() {
+    if (!W.dragging) return;
+    W.dragging = false; handle.classList.remove("grabbing");
+    const now = performance.now();
+    if (!W.moved && now - W.downAt < 300) {
+      W.y = W.ground; W.vx = 0; W.vy = -420; W.canChute = false; setState("fall"); say(pick(LINES.click), 2.2);
+      return;
+    }
+    const a = W.samples[0], b = W.samples[W.samples.length - 1], span = Math.max(0.016, (b.t - a.t) / 1000);
+    W.vx = now - b.t > 90 ? 0 : clamp((b.x - a.x) / span, -2400, 2400);
+    W.vy = now - b.t > 90 ? 0 : clamp((b.y - a.y) / span, -2400, 2400);
+    W.canChute = W.ground - W.y > 150;
+    setState("fall"); whoosh();
+  }
+  handle.addEventListener("pointerup", release);
+  handle.addEventListener("pointercancel", release);
+  window.addEventListener("pointermove", (e) => { ptr.x = e.clientX; ptr.y = e.clientY; ptr.active = e.pointerType === "mouse"; }, { passive: true });
+  document.addEventListener("pointerleave", () => { ptr.active = false; });
+  swWalter.addEventListener("click", () => setWalter(!W.on));
+  $("#drop-walter").addEventListener("click", () => { dropFromSky(); });
+
+  /* ---------- Dark mode ---------- */
+  const swTheme = $("#sw-theme");
+  const isDark = () => (root.getAttribute("data-theme") || (sysDark.matches ? "dark" : "light")) === "dark";
+  function toggleTheme() {
+    const next = isDark() ? "light" : "dark";
+    root.setAttribute("data-theme", next); store.set("ck-theme", next); setSwitch(swTheme, next === "dark"); readTokens();
+  }
+  swTheme.addEventListener("click", toggleTheme);
+  if (sysDark.addEventListener) sysDark.addEventListener("change", () => { if (!root.getAttribute("data-theme")) { setSwitch(swTheme, isDark()); readTokens(); } });
+
+  /* ---------- Keyboard shortcuts ---------- */
+  const KEYS = { h: "home", x: "experience", b: "blog", p: "projects", c: "contact", r: "research" };
+  document.addEventListener("keydown", (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey || e.repeat) return;
+    const t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    const k = (e.key || "").toLowerCase();
+    if (KEYS[k]) {
+      const el = document.getElementById(KEYS[k]);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" }); blip(600); }
+      return;
+    }
+    if (k === "t") toggleTheme();
+    else if (k === "m") toggleBgm();
+    else if (k === "d") dropFromSky();
+    else if (k === "s") setSound(!soundOn);
+  });
+
+  /* ---------- Start up ---------- */
+  const savedTheme = store.get("ck-theme");
+  if (savedTheme === "dark" || savedTheme === "light") root.setAttribute("data-theme", savedTheme);
+  setSwitch(swTheme, isDark());
+  readTokens();
+  htBuild();
+  syncRadio();
+  setSound(store.get("ck-sound") === "on", false);
+  setWalter(store.get("ck-walter") !== "off", false);
+  window.addEventListener("resize", () => { if (W.on) wSize(); htBuild(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => htBuild());
+})();
+</script>
+</body>
+</html>
