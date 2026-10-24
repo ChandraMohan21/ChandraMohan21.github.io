@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -41,15 +41,6 @@ img { max-width: 100%; }
   --size-mini: 0.75rem;
   --size-heading: clamp(1.25rem, 5.5vw, 1.875rem);
   --pad: 2rem;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0E0E0E; --surface: #161616; --ink: #F2F2F2; --body: #CFCFCF; --meta: #8E8E8E;
-    --rule: rgba(255, 255, 255, 0.1); --hover: rgba(255, 255, 255, 0.06); --glass: rgba(18, 18, 18, 0.72);
-    --accent: #FF7A33; --accent-soft: rgba(255, 122, 51, 0.16); --accent-ink: #FF8A4C; --shadow: rgba(0, 0, 0, 0.5);
-    --logo-plate: #EDEDED; --logo-invert: 1;
-    color-scheme: dark;
-  }
 }
 :root[data-theme="dark"] {
   --bg: #0E0E0E; --surface: #161616; --ink: #F2F2F2; --body: #CFCFCF; --meta: #8E8E8E;
@@ -408,7 +399,6 @@ h3 { font-size: var(--size-body); font-weight: 600; line-height: 1.4; margin: 0;
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const pick = (a) => a[Math.floor(Math.random() * a.length)];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const sysDark = window.matchMedia("(prefers-color-scheme: dark)");
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
@@ -900,13 +890,12 @@ h3 { font-size: var(--size-body); font-weight: 600; line-height: 1.4; margin: 0;
 
   /* ---------- Dark mode ---------- */
   const swTheme = $("#sw-theme");
-  const isDark = () => (root.getAttribute("data-theme") || (sysDark.matches ? "dark" : "light")) === "dark";
+  const isDark = () => root.getAttribute("data-theme") === "dark";
   function toggleTheme() {
     const next = isDark() ? "light" : "dark";
-    root.setAttribute("data-theme", next); store.set("ck-theme", next); setSwitch(swTheme, next === "dark"); readTokens();
+    root.setAttribute("data-theme", next); setSwitch(swTheme, next === "dark"); readTokens();
   }
   swTheme.addEventListener("click", toggleTheme);
-  if (sysDark.addEventListener) sysDark.addEventListener("change", () => { if (!root.getAttribute("data-theme")) { setSwitch(swTheme, isDark()); readTokens(); } });
 
   /* ---------- Keyboard shortcuts ---------- */
   const KEYS = { h: "home", r: "research", x: "experience", p: "projects", e: "education", c: "contact" };
@@ -926,8 +915,6 @@ h3 { font-size: var(--size-body); font-weight: 600; line-height: 1.4; margin: 0;
   });
 
   /* ---------- Start up ---------- */
-  const savedTheme = store.get("ck-theme");
-  if (savedTheme === "dark" || savedTheme === "light") root.setAttribute("data-theme", savedTheme);
   setSwitch(swTheme, isDark());
   readTokens();
   htBuild();
